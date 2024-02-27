@@ -23,38 +23,38 @@ function App() {
   });
 
   useEffect(() => {
-    window.localStorage.setItem("saved-contacts", JSON.stringify(contact))
+    window.localStorage.setItem("saved-contacts", JSON.stringify(contact));
   }, [contact]);
 
   // search logic
-  const [searchVal, setSearchVal] = useState("");
-  const handleSearch = (e) => {
-    setSearchVal(e.target.value);
-  };
-  const filteredContacts = contact.filter((item) =>
-    item.name.toLowerCase().includes(searchVal.toLowerCase())
-  );
+  // const [searchVal, setSearchVal] = useState("");
+  // const handleSearch = (e) => {
+  //   setSearchVal(e.target.value);
+  // };
+  // const filteredContacts = contact.filter((item) =>
+  //   item.name.toLowerCase().includes(searchVal.toLowerCase())
+  // );
 
   // adding contacts logic
-  const addContact = (newContact) => {
-    setContact((prevContacts) => {
-      return [...prevContacts, newContact];
-    });
-  };
+  // const addContact = (newContact) => {
+  //   setContact((prevContacts) => {
+  //     return [...prevContacts, newContact];
+  //   });
+  // };
 
   // deleting contacts logic
-  const deleteContact = (contactId) => {
-    setContact((prevContacts) => {
-      return prevContacts.filter((item) => item.id !== contactId);
-    });
-  };
+  // const deleteContact = (contactId) => {
+  //   setContact((prevContacts) => {
+  //     return prevContacts.filter((item) => item.id !== contactId);
+  //   });
+  // };
 
   return (
     <>
       <h1>Phonebook</h1>
-      <ContactForm onAdd={addContact} />
-      <SearchBox val={searchVal} onSearch={handleSearch} />
-      <ContactList contacts={filteredContacts} onDelete={deleteContact} />
+      <ContactForm />
+      <SearchBox />
+      <ContactList />
     </>
   );
 }
