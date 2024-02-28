@@ -3,9 +3,9 @@ import { Contact } from "../Contact/Contact";
 import css from "./ContactList.module.css";
 
 export const ContactList = () => {
-  const contacts = useSelector((state) => state.contacts);
+  const contacts = useSelector((state) => state.contacts.contactsList);
   const filter = useSelector((state) => state.filter.filter);
-
+  console.log(contacts);
   const visibleContacts = contacts.filter((item) =>
     item.name.toLowerCase().includes(filter.toLowerCase())
   );
