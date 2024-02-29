@@ -51,7 +51,7 @@ export const ContactForm = () => {
           </label>
           <Field
             className={css.input}
-            type="number"
+            type="text"
             name="number"
             id="contactnumber"
             autoComplete="tel"
